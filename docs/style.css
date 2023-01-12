@@ -1,0 +1,1682 @@
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+html > body {
+	font-family: "NanumSquare";
+}
+
+:root {
+	--top-bar-height: 69px;
+}
+
+/* 라이브러리 */
+.con {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+
+/* 자세히 보기 공통 속성 */
+.see-detail-common-attr {
+	position: absolute;
+	width: 125px;
+	height: 38px;
+}
+
+.see-detail-common-attr a {
+	font-size: 15px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border-radius: 5px;
+}
+/* 자세히 보기 공통 끝 */
+
+/* -- pc 웹 사이트 구현 시작 -- */
+
+/* top-bar 메뉴 구현 시작 */
+.pc-top-bar {
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 2px solid #000;
+	z-index: 20;
+}
+
+.pc-top-bar__inner_wrap > ul > li > a {
+	display: block;		
+	padding: 0 20px;
+	position: relative;
+	color: #555;
+	letter-spacing: -0.5px;
+}
+
+.pc-top-bar__inner_wrap > ul > li:hover > a {
+	text-decoration: underline;
+}
+
+.pc-top-bar__inner_wrap > ul > li:not(:last-child) > a::after {
+	content: "";
+	width: 1px;
+	height: 11px;
+	background-color: #555;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 100%;	
+}
+
+.search-btn {
+	height: 34px;
+	width: 34px;	
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	position: relative;
+}
+
+.search-btn > a {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.pc-top-bar__menu-1 > ul > li > a {
+	display: flex;
+	height: 100%;	
+	padding: 8px 13px 0 13px;
+	letter-spacing: -0.5px;
+}
+
+.pc-top-bar__menu-1 > ul > li:hover > a {
+	background-color: #2C2A29;
+	color: #669900;
+	text-decoration: underline;
+}
+
+.menu-1__sub-menu {	
+	position: absolute;	
+	left: 0;
+	width: 100%;
+	background-color: #2C2A29;	
+	max-height:0;
+	overflow: hidden;
+	transition: max-height .3s, visibility .3s;
+}
+
+.pc-top-bar__menu-1 > ul > li:hover > .menu-1__sub-menu {
+	max-height: 330px;
+}
+
+.menu-1__sub-menu > .con > ul > li:first-child {
+	padding-right: 40px;
+}
+
+.menu-1__sub-menu > .con > ul > li:not(:first-child) {	
+	padding: 0 40px;
+}
+
+/* 2, 3차 메뉴 아이템 텍스트 공통 속성  */
+.menu-1__sub-menu > .con ul > li > a {
+	display: block;
+}
+
+.menu-1__sub-menu > .con > ul {
+	margin-top: 10px;
+}
+
+/* 2차 메뉴 아이템 텍스트 */
+.menu-1__sub-menu > .con > ul > li > a {
+	color: white;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.menu-1__sub-menu > .con > ul > li > ul {
+	margin-bottom: 15px;
+}
+
+/* 3차 메뉴 아이템 텍스트 */
+.menu-1__sub-menu > .con > ul > li > ul > li > a {
+	color: #999;
+	padding: 3px 0;
+	font-size: 14px;
+}
+
+.menu-1__sub-menu > .con ul > li > a:hover {
+	text-decoration: underline;
+}
+/* top-bar 메뉴 구현 끝 */
+
+/* main-top-banner 구현 시작 */
+.main-top-banner {
+	height: 34vw;
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Chrisma2_BG.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.main-top-banner__con {
+	position: relative;
+	max-width: 100%;
+	height: 100%;
+}
+
+.main-top-banner__slogan {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-70%);
+	width: 26%;
+	left: 10%;
+}
+
+.main-top-banner__slogan > img {
+	max-width: 100%;
+}
+
+.season-menu {
+	position: absolute;
+}
+
+.season-menu > img {
+	display: block;
+	width: 100%;
+}
+
+.season-menu.menu-1 {
+	z-index: 9;
+	top: 34.5%;
+	left: 41.5%;
+	width: 22%;
+}
+
+.season-menu.menu-2 {
+	z-index: 9;
+	top: 34.5%;
+	right: 19.2%;
+	width: 18%;
+}
+
+.season-menu.menu-3 {
+	z-index: 8;
+	top: 15.1%;
+	left: 42%;
+	width: 19%;
+
+}
+
+.season-menu.menu-4 {
+	z-index: 8;
+	top: 18%;
+	right: 9.4%;
+	width: 21%;
+}
+
+.see-detail-btn {
+	z-index: 10;
+	top: 63.5%;
+	left: 10%;
+	width: 25%;
+	text-align: center;
+	position: absolute;	
+}
+
+.see-detail-btn > a {
+	display: inline-block;
+	border: 2px solid white;
+	border-radius: 7px;
+	color: white;
+	padding: 10px;
+	transition: all .4s;
+}
+
+.see-detail-btn:hover > a {
+	background-color: white;
+	color: black;
+	text-decoration: underline;
+}
+/* main-top-banner 구현 끝 */
+
+
+/* notice-line 구현 시작 */
+.notice-line {
+	position: relative;
+}
+
+.notice-line__con {
+	width: 1280px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* notice-line 구현 끝 */
+
+
+/* 크리스마스 배너 구현 시작 */
+.x-mas-blend-bean__con {
+	max-width: 1124px;
+	margin: 0 auto;
+}
+
+.x-mas-blend-bean {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_christmas_bean_bg_002_02.jpg);
+	height: 573px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+
+.x-mas-blend-bean::before, 
+.x-mas-blend-bean::after {
+	content: '';
+	position: absolute;
+	background-repeat: no-repeat;
+	width: 234px;
+	height: 234px;
+}
+
+.x-mas-blend-bean::before {	
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/m_2022_christmas_bean_bg_star_left.png);
+	bottom: 0;
+	left: 0;
+	background-position: left bottom;
+}
+
+.x-mas-blend-bean::after {	
+	bottom: 0;
+	right: 0;
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/m_2022_christmas_bean_bg_star_right.png);
+	background-position: right bottom;
+}
+
+.x-mas-blend-bean__txt-box {
+	position: relative;	
+}
+
+.x-mas-blend__detail-btn {
+	top: 65%;
+}
+
+.x-mas-blend__detail-btn a {		
+	font-size: 15px;		
+	border: 2px solid white;
+	color: white;
+	transition: all .4s;
+}
+
+.x-mas-blend__detail-btn a:hover {
+	background-color: white;
+	text-decoration: underline;
+	color: black;
+}
+/* 크리스마스 배너 구현 끝 */
+
+/* 리저브 배너 구현 시작 */
+.reserve-bean {
+	height: 400px;
+	position: relative;
+}
+
+.reserve-bean__bg-img > img {
+	object-fit: cover;
+}
+
+.reserve-bean__con {
+	width: 1080px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.reserve-bean__title {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);	
+}
+
+.reserve-bean__btn-detail {
+	bottom: 17%;
+	left: 24.5%;
+}
+
+.reserve-bean__btn-detail a {
+	color: #b9813d;	
+	border: 2px solid #b9813d;		
+	transition: background-color .7s, color .7s;
+}
+
+.reserve-bean__btn-detail a:hover {
+	background-color: #b9813d;
+	color: white;
+	text-decoration: underline;
+}
+
+/* 리저브 배너 구현 끝 */
+
+/* Favorite Banner 구현 시작 */
+.favorite-banner {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Chrismas2_PTF_bg.png);
+	background-repeat: no-repeat;
+	background-size: auto 87%;
+	background-attachment: fixed;
+	height: 800px;
+	position: relative;
+	background-position: center bottom;
+}
+
+.favorite-banner__con {	
+	max-width: 1100px;		
+	margin: 0 auto;
+	height: 100%;
+	position: relative;	
+}
+
+.favorite-banner__txt-wrap {
+	position: absolute;
+	left: -193px;
+	width: 50%;
+	height: 100%;
+}
+
+.favorite-banner__txt {
+	position: absolute;	
+	background-repeat: no-repeat;	
+	z-index: 7;
+}
+
+.favorite-banner__txt-01 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/fav_prod_txt01.png);
+	height: 204px;
+	right: 0;	
+	top: 140px;
+	width: 258px;	
+}
+
+.favorite-banner__txt-02 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/fav_prod_txt02.png);
+	height: 156px;
+	top: 383px;
+	right: 0;	
+	width: 362px;	
+}
+
+.favorite-banner__main-img {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/2022_Chrismas2_PTF.png);
+	top: 100px;
+	right: -240px;
+	width: 912px;
+	height: 575px;
+	position: absolute;	
+	background-repeat: no-repeat;
+	background-position: top;
+	z-index: 7;
+}
+
+.favorite-banner__btn-detail {	
+	bottom: 178px;
+	right: 0;	
+	z-index: 7;	
+}
+
+.favorite-banner__btn-detail a {
+	color: white;	
+	border: 2px solid white;		
+	transition: all .4s;	
+}
+
+.favorite-banner__btn-detail a:hover {
+	text-decoration: underline;
+	background-color: white;
+	color: black;
+}
+/* Favorite Banner 구현 끝 */
+
+/* reserve magazine banner 구현 시작 */
+.reserve-magazine-banner {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_bg_pc.png);
+	background-size: auto 353px;
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	position: relative;
+	height: 400px;
+}
+
+.reserve-magazine-banner__con {
+	max-width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.reserve-magazine__title {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.reserve-magazine__main-img {
+	position: absolute;
+	top: 0;
+	right: 70px;
+}
+
+.reserve-magazine__btn-detail {
+	top: 70%;
+	left: 295px;
+}
+
+.reserve-magazine__btn-detail a {	
+	border: 2px solid black;	
+	transition: all .4s;	
+}
+
+.reserve-magazine__btn-detail a:hover {
+	text-decoration: underline;
+	background-color: black;
+	color: white;
+}
+/* reserve magazine banner 구현 끝 */
+
+/* store-banner 구현 */
+.store-banner {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/store_bg.jpg);
+	background-size: 100% auto;
+	height: 400px;
+	position: relative;		
+}
+
+.store-banner__con {
+	max-width: 1100px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.store-banner__img-01 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_main_story_1.png);
+	height: 312px;
+	left: 160px;
+	position: absolute;
+	top: 0;
+	width: 366px;
+	z-index: 4;
+	background-size: contain;
+}
+
+.store-banner__img-02 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_main_story_2.png);
+	height: 228px;
+	left: 390px;
+	position: absolute;
+	top: 149px;
+	width: 228px;
+	z-index: 5;
+	background-size: contain;
+}
+
+.store-banner__img-03 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/store_exp_img04.png);
+	height: 102px;
+	position: absolute;
+	right: -90px;
+	top: 298px;
+	width: 230px;
+	z-index: 4;
+}
+
+.store-banner__txt-01 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_pc_main_story_txt_1.png);
+	height: 54px;
+	position: absolute;
+	right: 32px;		
+	top: 100px;
+	width: 374px;
+	z-index: 4;
+}
+
+.store-banner__txt-02 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_pc_main_story_txt_2.png);
+	height: 92px;
+	position: absolute;
+	right: 40px;	
+	top: 168px;
+	width: 366px;
+	z-index: 4;
+}
+
+.store-banner__btn {
+	border: 2px solid #222;
+	border-radius: 3px;
+	height: 34px;	
+	position: absolute;
+	right: 286px;
+	top: 290px;
+	width: 121px;
+	z-index: 4;
+}
+
+.store-banner__btn a {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all .4s;
+}
+
+.store-banner__btn a:hover {
+	text-decoration: underline;
+	background-color: black;
+	color: white;
+}
+/* store-banner 끝 */
+
+/* footer 구현 시작 */
+.footer-bar {		
+	background-color: #2C2A29;
+	padding: 32px 0 35px 0;
+}
+
+.footer__menus-inner {
+	max-width: 1100px;
+	margin: 0 auto;
+	background-image: url(https://www.starbucks.co.kr/common/img/footer/footer_logo.png);	
+	background-repeat: no-repeat;
+	background-position: right 8px;	
+	position: relative;
+	margin-bottom: 60px;
+}
+
+/* 1, 2차 메뉴 아이템 공통 속성 */
+.footer__menus-inner ul > li > a {
+	color: white;
+}
+
+/* 1차 메뉴 아이템 */
+.footer__menus-inner > ul > li > a {
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.footer__menus-inner > ul > li:not(:nth-child(2)) > a {	
+	cursor: default;
+}
+
+.footer__menus-inner > ul > li:hover:nth-child(2) > a {
+	text-decoration: underline;
+}
+
+/* 2차 메뉴 아이템 */
+.footer__menus-inner > ul > li > ul > li > a {
+	padding: 3px 0;
+	font-size: 14px;
+}
+
+.footer__menus-inner > ul > li > ul > li:hover > a {
+	text-decoration: underline;	
+}
+
+.footer__award-wrap {
+	padding: 20px 0 40px 0;
+	background-color: #282828;
+}
+
+.copyright {
+	margin-top: 30px;
+}
+
+.copyright__con {
+	max-width: 1400px;
+	margin: 0 auto;		
+}
+
+.copyright__menu-bar > ul > li > a {
+	padding: 0 10px;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 13px;
+	position: relative;	
+}
+
+.copyright__menu-bar > ul > li:hover > a {
+	text-decoration: underline;
+}
+
+.copyright__menu-bar > ul > li:first-child > a {
+	color: #00b050;
+}
+
+.copyright__menu-bar > ul > li:not(:last-child) > a::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 12px;	
+	background-color: #393939;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+}
+
+.copyright__btn-group {
+	gap: 0 10px;
+	margin-top: 10px;
+}
+
+.copyright__btn-group a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	border: 2px solid white;
+	color: white;
+	font-size: 12px;
+	width: 90px;
+	height: 30px;
+}
+
+.copyright__btn-group a:hover {
+	text-decoration: underline;
+}
+
+.copyright__menu-txt {
+	margin-top: 20px;
+	color: #999;
+	font-size: 12px;
+}
+
+.copyright__menu-txt > ul > li {	
+	padding: 0 7px;
+}
+
+.copyright__menu-txt > span {
+	margin-top: 20px;
+}
+/* footer 구현 끝 */
+
+/* -- pc 웹 사이트 구현 끝 -- */
+
+
+/* -- 모바일 웹 사이트 구현 시작 --  */
+
+/* 모바일 탑바 구현 시작 */
+.mobile-top-bar {
+	height: var(--top-bar-height);
+	background-color: #f6f5ef;
+	border-bottom: 1px solid #e5e5e5;
+	z-index: 30;
+}
+
+.mobile-top-bar__logo img {
+	width: 45px;
+}
+
+.mobile-top-bar__btn-group > ul > li > a {
+	display: flex;
+	align-items: center;
+	padding: 0 15px;
+	height: 100%;	
+}
+
+.mobile-top-bar__btn-group img {
+	height: 37px;	
+}
+/* 모바일 탑바 구현 끝 */
+
+/* 모바일 탑 배너 구현 */
+.mob-top-banner {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2022/m_2022_Chrisma2_bg.png);
+	background-repeat: no-repeat;	
+	height: 347vw;
+	background-position: center top;
+	box-sizing: border-box;
+	background-size: cover;
+	margin-top: var(--top-bar-height);
+}
+
+.mob-top-banner__con {
+	max-width: 640px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+}
+
+.mob-top-banner__slogan {
+	position: absolute;
+	top: 4.3%;
+	left: 19.4%;
+	width: 45%;
+	display: block;		
+}
+
+.mob-top-banner__slogan > img {
+	max-width: 100%;
+	display: block;
+}
+
+.mob-top-banner__season-menus > .season-menu {
+	position: absolute;	
+}
+
+.mob-top-banner__season-menus > .season-menu > img {
+	max-width: 100%;
+	display: block;
+}
+
+.mob-top-banner__season-menus > .season-menu.menu-01 {
+	z-index: 9;
+	top: 17.4%;
+	left: 18.4%;
+	width: 64%;	
+}
+
+.mob-top-banner__season-menus > .season-menu.menu-02 {
+	z-index: 8;
+	top: 35.68%;
+	left: 18.8%;
+	width: 81.3%;
+}
+
+.mob-top-banner__season-menus > .season-menu.menu-03 {
+	z-index: 8;
+	top: 54.2%;
+	left: 17.4%;
+	width: 64%;
+}
+
+.mob-top-banner__season-menus > .season-menu.menu-04 {
+	z-index: 10;
+	top: 74%;
+	right: 1.4%;
+	width: 81%;
+}
+
+.mob-top-banner__btn {
+	position: absolute;	
+	width: 100%;	
+	bottom: 8%;	
+	display: flex;
+	justify-content: center;
+}
+
+.mob-top-banner__btn a {
+	border: 2px solid white;
+	width: 35%;
+	color: white;	
+	transition: background-color .4s, color .4s, text-decoration .4s;
+}
+
+.mob-top-banner__btn a:hover {
+	background-color: white;
+	color: black;
+	text-decoration: underline;
+}
+/* 모바일 탑 배너 끝 */
+
+/* mob-notice-line 구현 */
+.mob-notice-line {
+	position: relative;
+}
+
+.mob-notice-line__con {
+	width: 640px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* mob-notice-line 끝 */
+
+/* mob-notice-line 구현 */
+.mob-notice-line {
+	position: relative;
+}
+
+.mob-notice-line__con {
+	width: 640px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+/* mob-notice-line 끝 */
+
+/* 661px 이상 */
+@media (min-width: 661px) {
+	.mob-notice-line__inner-text-l .speaker-btn {
+		display: none;
+	}
+}
+
+/* 660px 이하 */
+@media (max-width: 660px) {
+	/* 모바일 notice-line 영역 660px	이하 */
+	.mob-notice-line {
+		height: 220px;
+	}
+
+	.mob-notice-line-bg {
+		flex-direction: column;		
+	}	
+
+	.mob-notice-line__left-bg {
+		width: 100% !important;
+		height: 110px !important;
+	}
+
+	.mob-notice-line__right-bg {
+		width: 100% !important;
+		height: 110px !important;
+	}
+
+	.mob-notice-line__con {		
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.mob-notice-line__inner-text-l {
+		justify-content: center;
+	}
+
+	.mob-notice-line__inner-text-l .notice-ttl {
+		display: none;
+	}
+
+	.mob-notice-line__left-text {		
+		height: 50%;
+		width: 100%;		
+	}
+
+	.mob-notice-line__right-text {
+		width: 100%;
+		height: 50%;		
+	}
+
+	.mob-notice-line__inner-text-r > a {	
+		justify-content: center;
+		width: 100%;
+	}
+
+	.mob-notice-line__inner-text-r > a > span:first-child {
+		font-size: 25px
+	}
+	/* 모바일 notice-line 영역 */
+}
+
+/* 모바일 스타벅스 리워드 배너 구현 시작 */
+.mob-sb-reward-wrap {
+	padding-top: 30px;
+	padding-bottom: 40px;
+	background-color: #1e3932;
+	min-height: 55vh;
+}
+
+.mob-sb-reward__con {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+.mob-sb-reward__logo {
+	margin-top: 3%;
+	width: 35%;
+}
+
+.mob-sb-reward__logo > img {
+	max-width: 100%;
+	display: block;
+}
+
+.mob-sb-reward__content {	
+	box-sizing: border-box;		
+	position: relative;
+	width: calc(65% - 80px);	
+	padding-right: 30px;
+	color: #fff;
+	letter-spacing: 0.5px;	
+}
+
+.mob-info-cont {	
+	position: relative;
+	min-height: 270px;	
+	width: 100%;	
+	border-bottom: 1px solid #4b615b;	
+}
+
+.btn-signin-group {
+	position: absolute;
+	top: 77%;
+	display: flex;	
+	gap: 0 10px;
+}
+
+.btn-signin-group a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	height: 38px;	
+	padding: 0 18.5px;
+	font-size: 14px;
+	color: #fff;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
+.btn-signin-group a:hover {
+	text-decoration: underline;
+}
+
+.btn-signin-group a:first-child {
+	background-color: #00704a;
+	border: 2px solid #00704a;
+}
+
+.mob-gift-cont {
+	min-height: 150px;	
+	position: relative;	
+}
+
+.mob-gift-cont .btn-egift {
+	box-sizing: border-box;
+	position: absolute;
+	margin-top: 30px;
+	top: 50%;
+	width: 198px;
+	height: 38px;		
+	font-size: 14px;
+	border: 2px solid #fff;
+	border-radius: 5px;
+}
+
+.mob-gift-cont .btn-egift a {	
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.mob-gift-cont .btn-egift a:hover {
+	text-decoration: underline;
+}
+/* 스타벅스 리워드 배너 구현 끝 */
+
+/* 641px 이상 */
+@media screen and (min-width: 641px) {
+	.gift-cont__mob-text {
+		display: none;
+	}
+}
+
+/* 640px 이하 */
+@media screen and (max-width: 640px) {	
+	.mob-sb-reward__con {
+		flex-direction: column;		
+		align-items: center;
+		justify-content: center;		
+	}
+	
+	.mob-sb-reward__logo {
+		margin-left: 0;		
+	}
+
+	.mob-sb-reward__content {
+		display: flex;		
+		justify-content: center;
+		align-items: center;
+		margin-top: 30px;
+		padding-right: 0;
+		width: 90%;		
+	}
+	
+	.mob-info-cont {		
+		display: flex;
+		justify-content: center;
+	}
+
+	.mob-info-cont__text {		
+		text-align: center;
+	}
+	
+	.btn-signin-group {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	
+	.mob-gift-cont {
+		text-align: center;
+		width: 100%;		
+	}
+	
+	.gift-cont__pc-text {
+		display: none;
+	}
+	
+	.mob-gift-cont .btn-egift {		
+		width: 80%;
+		left: 50%;
+		top: 60%;
+		transform: translateX(-50%);		
+	}
+}
+
+/* 모바일 블렌드 구현 시작 */
+.mo-blend-bean {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_m_newyear_promotion_bg_08.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 150vw;
+}
+
+.mo-blend-bean__con {
+	max-width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.mo-blend-bean__main-img-box {
+	position: absolute;
+	z-index: 10;
+	top: 10.4%;
+	left: 60%;
+	width: 54%;	
+	transform: translate(-50%, 0);
+}
+
+.mo-blend-bean__txt-box {
+	position: absolute;
+	z-index: 10;
+	top: 62%;
+	right: 50%;
+	bottom: 10.5%;	
+	width: 62%;
+	transform: translate(50%, 0);
+}
+
+.mo-blend-bean__detail-btn {
+	position: absolute;
+	width: 100%;
+	height: 7%;
+	display: flex;
+	justify-content: center;
+	bottom: 13%;
+	z-index: 10;
+}
+
+.mo-blend-bean__detail-btn a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 35%;	
+	color: #633510;
+	border: 2px solid #633510;	
+	font-size: 22px;
+	font-weight: bold;
+	border-radius: 3px;	
+	transition: color .7s, text-decoration .7s, background-color .7s;	
+}
+
+.mo-blend-bean__detail-btn a:hover {
+	color: white;
+	text-decoration: underline;
+	background-color: #633510;
+}
+
+/* 480px 이하  */
+@media (max-width : 480px ) {
+	.mo-blend-bean__detail-btn a {
+		font-size: 16px;		
+	}
+}
+/* 모바일 블렌드 구현 끝 */
+
+/* 모바일 fav 배너 구현 시작 */
+.mob-fav-banner {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/m_2022_Chrismas2_PTF_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center -6px;
+	background-size: cover;
+	height: 1130px;
+	width: 100%;
+}
+
+.mob-fav-banner__con {
+	max-width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;	
+}
+
+.mob-fav__img { 	
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2023/2023_newyear_pick_img.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 720px;
+	height: 475px;			
+	position: absolute;
+	top: 13%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+.mob-fav-txt01 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/mobile_menu_txt01.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	height: 72px;
+	left: 50%;			
+	margin-left: -175px;
+	position: absolute;
+	top: 720px;
+	width: 350px;
+	z-index: 7;
+}
+
+.mob-fav-txt02 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/mobile_menu_txt02.png);
+	background-repeat: no-repeat;		
+	background-size: 100% auto;
+	height: 129px;
+	left: 50%;
+	margin-left: -220px;
+	position: absolute;
+	top: 830px;
+	width: 440px;
+	z-index: 7;
+}
+
+.mob-fav_btn {
+	position: absolute;
+	top: 89%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 2px solid white;
+	border-radius: 5px;
+	width: 115px;
+	height: 34px;	
+}
+
+.mob-fav_btn a {
+	color: white;
+}
+
+/* 1100 이하 */
+@media screen and (max-width: 1100px) {
+	.mob-fav__img {
+		width: 570px;
+		height: 380px;
+	}
+}
+
+/* 640 이하 */
+@media screen and (max-width: 640px) {
+	.mob-fav__img {
+		width: 460px;
+		height: 314px;
+	}
+	
+	.mob-fav_btn a {
+		font-size: 13px;
+	}
+}
+
+/* 480 이하 */
+@media screen and (max-width: 480px) {
+	.mob-fav-banner {		
+		background-position: center -3px;	
+		height: 880px;
+		width: 100%;	
+	}
+
+	.mob-fav__img {
+		width: 320px;
+		height: 264px;
+	}
+
+	.mob-fav-txt01 {		
+		margin-left: -125px;		
+		top: 68%;
+		width: 250px;		
+	}
+
+	.mob-fav-txt02 {
+    height: 129px;    
+    margin-left: -150px;    
+    top: 76%;
+    width: 300px;    
+	}
+}
+/* 모바일 fav 배너 구현 끝 */
+
+/* 모바일 rv-magazine 배너 구현 시작 */
+.mob-rv-magazine-banner {
+	background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_bg_pc.png);
+	background-repeat: no-repeat;	
+	height: 400px;
+	background-position: 50% 100%;
+	background-size: auto 353px;
+}
+
+.mob-rv-magazine-banner__con {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;	
+}
+
+.mob-rv__title {
+	position: absolute;
+	top: 28%;
+	left: 8%;
+	z-index: 10;
+}
+
+.mob-rv__title img {
+	width: 510px;
+}
+
+.mob-rv__visual {
+	display: block;
+	position: absolute;
+	bottom: auto;	
+	top: 0;
+	right: 50%;
+	margin-right: -483px;
+}
+
+
+.mob-rv__btn-detail {
+	border: 2px solid black;
+	border-radius: 5px;
+	top: 58%;
+	left: 30%;
+}
+
+/* 930px 이상 */
+@media screen and (min-width: 930px) {
+	.mob-rv-magazine-banner.banner-1-2 {
+		display: none;
+	}
+}
+
+/* 930px 이하 */
+@media screen and (max-width: 930px) {
+	.mob-rv-magazine-banner.banner-1-1 {
+		display: none;
+	}
+	
+	.mob-rv-magazine-banner.banner-1-2 {
+		background-image: url(https://image.istarbucks.co.kr/upload/common/img/etc/reserve_visual_m.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: 1200px;
+		position: relative;
+	}
+	
+	.mob-rv__btn-detail {
+		top: 95%;
+		left: auto;
+		right: 12%;
+	}
+}
+/* 모바일 rv-magazine 배너 구현 끝 */
+
+/* 모바일 store 배너 구현 시작 */
+.mob-store-banner {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/store_bg.jpg);
+	background-size: 100% auto;	
+	height: 750px;
+	position: relative;
+	width: 100%;
+}
+
+.mob-store-banner__con {
+	width: 500px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;	
+}
+
+div[class^="mob-store"][class*="img-0"] {
+	position: absolute;
+	background-size: 100% auto;
+}
+
+.mob-store__img-01 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_main_story_2.png);	
+	height: 199px;
+	top: 21%;
+	left: 55%;	
+	width: 200px;
+	z-index: 5;
+}
+
+.mob-store__img-02 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_main_story_1.png);	
+	height: 255px;
+	top: 0;
+	z-index: 4;
+	left: 10%;
+	width: 300px;	
+}
+
+.mob-store__img-03 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/store_exp_img03.png);		
+	height: 115px;	
+	left: 9%;
+	top: 240px;
+	width: 280px;
+	z-index: 4;
+}
+
+.mob-store__img-04 {
+	background-image: url(https://www.starbucks.co.kr/common/img/main/store_exp_img04.png);
+	height: 75px;
+	left: 78%;
+	top: 675px;
+	width: 170px;
+}
+
+
+.mob-store__txt-01 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221213_m_main_story_txt_1.png);
+	background-size: 100% auto;
+	height: 64px;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	top: 390px;
+	width: 440px;
+	z-index: 4;
+}
+
+.mob-store__txt-02 {
+	background-image: url(https://image.istarbucks.co.kr/img/event/2022/221212_m_main_story_txt_2.png);
+	background-size: 100% auto;
+	height: 130px;
+	left: 50%;
+	margin-left: -220px;
+	position: absolute;
+	top: 474px;
+	width: 440px;
+	z-index: 4;
+}
+
+.mob-store__btn {
+	border: 2px solid #222;
+	border-radius: 3px;
+	left: 50%;	
+	margin-left: -62px;
+	position: absolute;
+	top: 640px;
+	width: 121px;
+	height: 34px;
+	z-index: 4;
+}
+
+.mob-store__btn a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+/* 모바일 store 배너 구현 끝 */
+
+/* 모바일 footer 구현 시작  */
+.mob-footer-bar {
+	background-color: #2C2A29;	
+	position: relative;
+	width: 100%;
+	padding: 32px 0 35px 0;
+}
+
+.mob-footer__con {
+	width: 762px;
+	margin: 0 auto;
+	background-image: url(https://www.starbucks.co.kr/common/img/footer/footer_logo.png);
+	background-repeat: no-repeat;
+	background-position: right 8px;		
+	position: relative;
+}
+
+.footer__menus > ul > li {
+	width: 250px;
+}
+
+.footer__menus > ul > li:nth-child(4) {	
+	margin-top: 20px;
+}
+
+.footer__menus > ul > li:nth-child(5) {	
+	margin-top: 20px;
+}
+
+.footer__menus > ul > li:nth-child(6) {	
+	margin-top: 20px;
+}
+
+.footer__menus ul > li > a {
+	color: white;
+	letter-spacing: -0.5px;
+}
+
+.footer__menus > ul > li > a {
+	font-size: 14px;
+}
+
+.footer__menus > ul > li > ul  {
+	margin-top: 5px;
+}
+
+.footer__menus > ul > li > ul > li > a {
+	padding: 3px 0;
+	font-size: 12px;
+}
+
+.mob-footer__util-btn {		
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.mob-footer__util-btn > ul {	
+	width: 61%;		
+}
+
+.mob-footer__util-btn > ul > li {	
+	width: 33%;
+	display: inline-block;
+	margin: 0 10px;	
+}
+
+.mob-footer__util-btn > ul > li > a {
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	border: 2px solid #fff;
+	color: white;
+	border-radius: 3px;
+	padding: 10% 3%;
+}
+
+.mob-footer__award-wrap {
+	background-color: #282828;
+	margin-top: 30px;
+	height: 90px;
+	padding-top: 20px;
+}
+
+.mob-copyright {
+	margin-top: 30px;
+}
+
+.mob-copyright__con {
+	max-width: 1400px;
+	margin: 0 auto;		
+}
+
+.mob-copyright__menu-bar > ul > li > a {
+	padding: 0 10px;
+	color: #ccc;
+	font-weight: bold;
+	font-size: 13px;
+	position: relative;	
+}
+
+.mob-copyright__menu-bar > ul > li:hover > a {
+	text-decoration: underline;
+}
+
+.mob-copyright__menu-bar > ul > li:first-child > a {
+	color: #00b050;
+}
+
+.mob-copyright__menu-bar > ul > li:not(:last-child) > a::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 12px;	
+	background-color: #393939;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+}
+
+.mob-copyright__btn-group {
+	gap: 0 10px;
+	margin-top: 10px;
+}
+
+.mob-copyright__btn-group a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	border: 2px solid white;
+	color: white;
+	font-size: 12px;
+	width: 90px;
+	height: 30px;
+}
+
+.mob-copyright__btn-group a:hover {
+	text-decoration: underline;
+}
+
+.mob-copyright__menu-txt {
+	margin-top: 20px;
+	color: #999;
+	font-size: 12px;
+}
+
+.mob-copyright__menu-txt > ul > li {	
+	padding: 0 7px;
+}
+
+.mob-copyright__menu-txt > span {
+	margin-top: 20px;
+}
+
+@media screen and (min-width: 660px) {
+	.mob-footer-bar.footer-1-2 {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 660px) {
+	.mob-footer-bar.footer-1-1 {
+		display: none;
+	}
+	
+	.mob-footer-bar.footer-1-2 {
+		padding-top: 0;
+	}
+	
+	.mob-footer-bar.footer-1-2 .footer__menus > ul ul {
+		display: none;
+	}
+	
+	.mob-footer-bar.footer-1-2 .mob-footer__con {
+		width: 100%;
+	}		
+
+	.mob-footer-bar.footer-1-2 .footer__menus > ul {
+		display: block;
+		background-color: #645952;
+		color: #e6dbd3;				
+	}
+	
+	.mob-footer-bar.footer-1-2 .footer__menus > ul > li {
+		margin: 0;
+		width: 100%;
+		border-bottom: 1px solid #403a36;
+	}
+
+	.mob-footer-bar.footer-1-2 .footer__menus > ul > li > a {			
+		position: relative;		
+		padding: 10px;
+		letter-spacing: 0;
+	}
+	
+	.mob-footer-bar.footer-1-2 .footer__menus > ul > li > a::after {
+		content: "";		
+		background-image: url(https://www.starbucks.co.kr/common/img/footer/mobile_footer_arrow_down.png);
+		background-repeat: no-repeat;
+		background-size: 20px auto;		
+		height: 16px;
+		margin-top: -5px;
+		right: 10px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-20%);
+		width: 24px;
+	}
+	
+	.mob-footer-bar.footer-1-2 .mob-footer__util-btn {
+		margin-top: 20px;
+	}
+	
+	.mob-footer-bar.footer-1-2 .mob-footer__util-btn ul {
+		width: 100%;		
+		justify-content: center;
+	}
+	
+	.mob-footer-bar.footer-1-2 .mob-footer__util-btn ul > li {
+		width: 20%;
+	}
+	
+	.mob-footer-bar.footer-1-2 .mob-footer__util-btn ul > li > a {		
+    color: #ffffff;
+		font-size: 1.3rem;
+    border: 2px solid #ffffff;    
+    padding: 10% 3%;
+	}
+	
+	.mob-footer-bar.footer-1-2 .mob-copyright .mob-copyright__menu-txt > ul {
+		display: block;
+		text-align: center;
+	}		
+}
+/* 모바일 footer 구현 끝 */
+
+/* -- 모바일 웹 사이트 구현 끝 --  */
+
+@media ( min-width: 960px ) {
+	.starbucks-mobile-wrap {
+		display: none;
+	}
+}
+
+@media ( max-width: 960px ) {
+	.starbucks-pc-wrap {
+		display: none;
+	}
+}
